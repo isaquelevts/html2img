@@ -5,7 +5,10 @@ const app = express();
 app.use(express.json({ limit: '10mb' }));
 
 app.post('/convert', async (req, res) => {
-  const { html, width = 1080, height = 1350, quality = 100 } = req.body;
+  const html = req.body.html;
+  const width = parseInt(req.body.width) || 1080;
+  const height = parseInt(req.body.height) || 1350;
+  const quality = parseInt(req.body.quality) || 100;
 
   if (!html) return res.status(400).json({ error: 'html is required' });
 
