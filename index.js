@@ -31,3 +31,9 @@ app.post('/convert', async (req, res) => {
 
   } catch (err) {
     res.status(500).json({ error: err.message });
+  } finally {
+    if (browser) await browser.close();
+  }
+});
+
+app.listen(3033, () => console.log('html2img running on port 3033'));
