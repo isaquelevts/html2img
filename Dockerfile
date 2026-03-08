@@ -21,16 +21,3 @@ COPY index.js .
 
 EXPOSE 3033
 CMD ["node", "index.js"]
-```
-
----
-
-### Fontes
-Sobe os dois arquivos `.ttf` na raiz do repositório junto com os outros arquivos. A estrutura final do repo fica assim:
-```
-html2img/
-├── Dockerfile
-├── index.js
-├── package.json
-├── DMSans-Regular.ttf
-└── DMSans-Black.ttf
