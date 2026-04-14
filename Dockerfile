@@ -10,8 +10,10 @@ RUN apt-get update && apt-get install -y \
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 
+# Copiando as fontes para a pasta de fontes do sistema
 COPY DMSans-Regular.ttf /usr/share/fonts/
 COPY DMSans-Black.ttf /usr/share/fonts/
+COPY Audiowide-Regular.ttf /usr/share/fonts/
 RUN fc-cache -fv
 
 WORKDIR /app
